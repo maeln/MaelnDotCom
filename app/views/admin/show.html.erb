@@ -1,0 +1,15 @@
+<p class="titre"><%= @nouvelles.title %></p>
+<p class="desc">// Auteur : <%= @nouvelles.autor %> // tags : <%= @nouvelles.tags %> //</p>
+<p><%= simple_format(@nouvelles.corp) %></p>
+<br />
+Comments <hr class="barre"/>
+<p><%= link_to("Écrire un commentaire.", :action => "comment", :id => params[:id]) %></p>
+<% if @comments.empty? %>
+<p>Pas de commentaires.</p>
+<% else %>
+<% @comments.each do |n| %>
+<p class="desc">|Par: <%= n.pseudo %> | le: <%= n.created_at %>|</p>
+<p class="desc"><%= link_to("Remove", :action => "remove_comment", :id => n.id) %></p>
+<p><%= simple_format(n.corp) %></p>
+<% end %>
+<% end %>

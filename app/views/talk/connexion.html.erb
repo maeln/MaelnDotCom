@@ -1,0 +1,8 @@
+<% if flash[:notice] %>
+<div id="notice"><%= flash[:notice] %></div>
+<% end %>
+<% form_for(:q) do |f| %>
+<p>Pseudo :<br /><%= f.text_field :login %></p>
+<p>Mot de passe :<br/><%= f.password_field :passwd %></p>
+<p><%= submit_tag "connexion" %></p>
+<% end %>

@@ -1,0 +1,6 @@
+<% form_for(:post) do |n| %>
+<p><label>Pseudo</label> <%= n.text_field :login %></p>
+<p><label>Password</label> <%= n.text_field :passwd %></p>
+<p><label>e-mail</label> <%= n.text_field :email %></p>
+<%= submit_tag 'envoyer' %>
+<% end %>

@@ -1,0 +1,7 @@
+<% form_for(:post) do |n| %>
+<p><label>Titre</label> <%= n.text_field :title, :value => @nouvelles.title %></p>
+<p><label>Auteur</label> <%= n.text_field :autor, :value => @nouvelles.autor %></p>
+<p><label>Tags</label> <%= n.text_field :tags, :value => @nouvelles.tags %></p>
+<p>écrire la nouvelle :</p><p><%= n.text_area :corp, :cols => 140, :rows => 25, :value => @nouvelles.corp %></p>
+<%= submit_tag 'envoyer' %>
+<% end %>

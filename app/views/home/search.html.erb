@@ -1,0 +1,8 @@
+<% if @result.empty? then %>
+<p>Aucune nouvelles trouvé pour vos mots clefs.</p>
+<% else %>
+<p>Resultat(s) :</p>
+<% @result.each do |n| %>
+<p class="titre"><%= link_to(n.title, :action => "show", :id => n.id) %></p>
+<% end %>
+<% end %>

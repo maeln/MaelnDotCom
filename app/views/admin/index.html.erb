@@ -1,0 +1,14 @@
+<% if flash[:notice] %>
+<div id="notice"><%= flash[:notice] %></div>
+<% end %>
+<%= link_to("Écrire une nouvelle.", :action => "create") %>
+<%= link_to("Ajouter un utilisateur TalK", :action => "adduser_talk") %>
+<hr />
+<% @nouvelles.each do |n| %>
+<p class="titre"><%= link_to(n.title, :action => "show", :id => n.id) %></p> 
+<p class="desc">// Auteur : <%= n.autor %> // tags : <%= n.tags %> //</p>
+<p><%= link_to("Edit", :controller => "admin", :action => "edit", :id => n.id) %> // <%= link_to("Remove", :controller => "admin", :action => "destroy", :id => n.id) %></p>
+<hr />
+<%= simple_format(n.corp) %>
+<hr />
+<% end %>

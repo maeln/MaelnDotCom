@@ -1,0 +1,27 @@
+<% if flash[:notice] %>
+<div id="notice"><%= flash[:notice] %></div>
+<% end %>
+<div id="Msg_box">
+<% form_for(:post) do |n| %>
+<p>Écrire un message :</p>
+<p><%= n.text_area :msg, :cols => 50, :rows => 7 %></p>
+<%= submit_tag 'envoyer' %>
+<% end %>
+</div>
+<div id="Conv">
+<p>Conversation :</p>
+<br />
+<div>
+<% @msg.each do |n| %>
+<% if n.pseudo == session[:user].login %>
+<div class="msg_left">
+<% else %>
+<div class="msg_right">
+<% end %>
+<p>Par : <%= n.pseudo %> | Le : <%= n.created_at %></p>
+<hr />
+<p><%= simple_format(n.msg) %></p>
+</div>
+<% end %>
+</div>
+</div>

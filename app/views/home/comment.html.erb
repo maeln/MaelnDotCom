@@ -1,0 +1,6 @@
+<% form_for(:q) do |n| %>
+<p><label>Auteur</label> <%= n.text_field :pseudo %></p>
+<p><label>E-mail</label> <%= n.text_field :mail %></p>
+<p></p><p><%= n.text_area :corp, :cols => 80, :rows => 20 %></p>
+<%= submit_tag 'envoyer' %>
+<% end %>

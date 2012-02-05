@@ -1,0 +1,6 @@
+<% form_for(:q) do |n| %>
+<p>Pour supprimer la nouvelles n°<%= params[:id] %>, veuillez répondre à la question suivantes :<p>
+<p><%= flash[:nb1] %> + <%= flash[:nb2] %> ?</p>
+<%= n.text_field :reponse %>
+<%= submit_tag %>
+<% end %>

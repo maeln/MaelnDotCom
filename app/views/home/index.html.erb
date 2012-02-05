@@ -1,0 +1,10 @@
+<% if flash[:notice] %>
+<div id="notice"><%= flash[:notice] %></div>
+<% end %>
+<% @nouvelles.each do |n| %>
+<p class="titre"><%= link_to(n.title, :action => "show", :id => n.id) %></p> 
+<p class="desc">// Auteur : <%= n.autor %> // tags : <%= n.tags %> //</p>
+<hr />
+<%= simple_format(n.corp) %>
+<hr />
+<% end %>
